@@ -93,3 +93,5 @@ end
 group :staging, :production do
   gem 'newrelic_rpm'
 end
+
+gem 'activeresource'
