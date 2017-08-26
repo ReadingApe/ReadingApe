@@ -1,0 +1,11 @@
+= render @commentable
+%h3= t('comment.list_comments')
+
+= render 'comments', commentable: @commentable, comments: @comments
+= paginate @comments
+%br
+
+= link_to_if user_signed_in?, t('comment.new_comment'), new_polymorphic_url([@commentable, Comment]),
+             data: {remote: true, method: :get, type: :script},
+             class: 'btn btn-outline-primary',
+             id: :new_comment  { link_to t('profile.login'), :new_user_session, class: 'btn btn-outline-primary' }

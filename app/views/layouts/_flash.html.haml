@@ -1,0 +1,6 @@
+- flash.each do |name, msg|
+  %div{class: flash_class(name, [:flash, :'alert-dismissible']), role: :alert}
+    %button.close{type: "button", "data-dismiss": "alert", "aria-label": "Close"}
+      %span{"aria-hidden": true} &times;
+    %strong= '[%s]' % name
+    %span= msg

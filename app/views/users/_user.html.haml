@@ -1,0 +1,12 @@
+.list-group-item.flex-column.align-items-start
+  .d-flex.w-100.justify-content-between<>
+    .lead.user-name
+      = precede user.model_name.human do
+        %b.ml-1<>= user.id
+    %small.card.text-muted.p-1
+  %p.user-description.mt-1<>
+  .d-flex.w-100.justify-content-between<>
+    - if user.respond_to? :comments
+      %small
+        = link_to t('comment.comments', count: user.comments.count),
+                  polymorphic_url([user, :comments], only_path: true)

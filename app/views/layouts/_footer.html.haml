@@ -1,0 +1,11 @@
+%footer.footer.text-muted
+  .container
+    .list-inline
+      %a.m-2{href: '/'}<>= t('menu.home')
+      |
+      %a.m-2{href: '/'}<>= t('menu.support')
+
+    %p<
+      .small.m-2<
+        = surround "由", "提供技术支持" do
+          = link_to 'Lax', 'https://github.com/Lax', class: 'm-1'

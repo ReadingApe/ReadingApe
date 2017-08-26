@@ -1,0 +1,17 @@
+en:
+  menu:
+    languages:
+      lang: "Language"
+      en: English
+      zh-CN: 中文
+
+    home: Home
+
+zh-CN:
+  menu:
+    languages:
+      lang: "Language"
+      en: English
+      zh-CN: 中文
+
+    home: 首页

@@ -1,0 +1,5 @@
+%main{class: [:c, :a].zip([controller_name, action_name]).map {|n| n.join("-") }}
+  .container<
+    = render 'layouts/flash'
+  .container<
+    = content_for?(:content) ? yield(:content) : yield

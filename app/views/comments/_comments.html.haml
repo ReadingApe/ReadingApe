@@ -1,0 +1,4 @@
+/ commentable, comments
+#comments.list-group{'data-url': polymorphic_url([commentable, :comments], only_path: true)}
+  - comments.each do |comment|
+    = render comment

@@ -1,0 +1,7 @@
+%h1= t('comment.edit_comment')
+
+= render 'form', comment: @comment
+
+= link_to 'Show', @comment
+\|
+= link_to t('action.back'), :back
