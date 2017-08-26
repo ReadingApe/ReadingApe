@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  namespace :hacker_news do
+    get 'items/index'
+    get 'items/show'
+  end
+
   concern :commentable do
     resources :comments, shallow: true
   end

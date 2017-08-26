@@ -95,3 +95,4 @@ group :staging, :production do
 end
 
 gem 'activeresource'
+gem 'httparty'

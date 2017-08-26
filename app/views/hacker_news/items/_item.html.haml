@@ -1,0 +1,6 @@
+.media
+  %img.d-flex.mr-3{alt: item.rank}
+  .media-body
+    %h5.mt-0
+      = link_to_unless item.url?.blank?, item.title, item.url, class: 'btn btn-outline-info' do
+        - link_to item.title, 'https://news.ycombinator.com/item?id=%d' % item.id, class: 'btn btn-outline-info'
