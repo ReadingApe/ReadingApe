@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170826131558) do
+ActiveRecord::Schema.define(version: 20170827071821) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer "user_id"
@@ -52,6 +52,15 @@ ActiveRecord::Schema.define(version: 20170826131558) do
     t.index ["belongs_to_type", "belongs_to_id"], name: "index_posts_on_belongs_to_type_and_belongs_to_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
     t.index ["uuid"], name: "index_posts_on_uuid", unique: true
+  end
+
+  create_table "stories", force: :cascade do |t|
+    t.integer "hacker_news_item_id"
+    t.integer "top_rank"
+    t.datetime "top_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["hacker_news_item_id"], name: "index_stories_on_hacker_news_item_id"
   end
 
   create_table "users", force: :cascade do |t|
