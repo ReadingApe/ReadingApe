@@ -24,14 +24,17 @@
       %span.navbar-toggler-icon
 
     = link_to :root, class: 'h1 navbar-brand mb-0' do
-      %img.d-inline-block.align-top{alt: :📚🦍}
+      %img.d-inline-block.align-top{alt: :'📚🦍Reading APE'}
 
     #navbarNavSiteMenus.collapse.navbar-collapse
       .navbar-nav.mr-auto
-        = link_to :root, class: ['nav-item', 'nav-link'] do
-          %i.material-icons.md-18<> home
+        = link_to :stories, class: ['nav-item', 'nav-link'] do
+          %i.material-icons.md-18<> format_list_bulleted
           = t('menu.home')
           %span.sr-only> (current)
+        = link_to :hacker_news_items, class: ['nav-item', 'nav-link'] do
+          %i.material-icons.md-18<> show_chart
+          = t('menu.current')
         = content_for?(:controller_menu) ? yield(:controller_menu) : ''
 
       .navbar-nav

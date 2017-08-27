@@ -1,4 +1,4 @@
-.media.mt-3{data: {rank: item.rank}}
+.media.mt-1.mb-3{data: {rank: item.rank?}}
   .media-body
     %h5.mt-0.display-5
       = link_to_unless item.url?.blank?, item.title, item.url do
