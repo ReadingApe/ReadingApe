@@ -10,7 +10,7 @@ Rails.application.routes.draw do
 
   resources :users, concerns: :commentable, only: []
   devise_for :users, controllers: { omniauth_callbacks: 'authentication/omniauth_callbacks' }
-  root to: 'pages#landing'
+  root to: 'hacker_news/items#index'
   get 'pages/landing'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
