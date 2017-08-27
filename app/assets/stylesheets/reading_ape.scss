@@ -5,9 +5,11 @@
   opacity: .91;
 }
 
-.media > img.img-thumbnail
+.media > img.media-img
 {
   opacity: .54;
+  width: 80px;
+  height: 80px;
 }
 
 a[data-rank]

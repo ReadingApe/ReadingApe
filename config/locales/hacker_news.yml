@@ -1,0 +1,19 @@
+en:
+  hacker_news:
+    score:
+      zero: "zero point"
+      one: "%{count} point"
+      few: "%{count} points"
+      many: "%{count} points"
+      other: "%{count} points"
+    by: "by %{by}"
+
+zh-CN:
+  hacker_news:
+    score:
+      zero: "0 point"
+      one: "%{count} point"
+      few: "%{count} points"
+      many: "%{count} points"
+      other: "%{count} points"
+    by: "由 %{by} 提交"

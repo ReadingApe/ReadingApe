@@ -1,6 +1,13 @@
 .media.mt-3
-  %img.img-thumbnail.d-flex.mr-3{alt: item.rank, src: 'https://source.unsplash.com/random/120x120?sig=%d' % item.rank, style: 'width: 120px; height: 120px;' }
+  %img.media-img.rounded.d-flex.mr-3{alt: item.rank, src: 'https://source.unsplash.com/random/80x80?sig=%d' % item.rank }
   .media-body
     %h5.mt-0.display-5
       = link_to_unless item.url?.blank?, item.title, item.url, data: {rank: item.rank} do
         - link_to item.title, 'https://news.ycombinator.com/item?id=%d' % item.id, data: {rank: item.rank}
+    .text-muted
+      = t('hacker_news.score', count: item.score)
+      = t('hacker_news.by', by: item.by)
+      = timeago_tag Time.at(item.time), lang: I18n.locale
+      = link_to t('comment.comments', count: item.descendants), 'https://news.ycombinator.com/item?id=%d' % item.id, class: 'text-muted text-nowrap font-weight-bold'
+
+      = timeago_script_tag
