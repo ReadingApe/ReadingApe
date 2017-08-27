@@ -9,3 +9,27 @@
 {
   opacity: .54;
 }
+
+a[data-rank]
+{
+  color: #147;
+  opacity: .91;
+}
+a[data-rank]::before
+{
+  opacity: .54;
+  content: attr(data-rank) '.';
+  margin-right: .54rem;
+}
+
+::-moz-selection {
+  background: darken($orange, 8%);
+  color: $gray-100;
+  text-shadow: 0 0 transparent
+}
+
+::selection {
+  background: darken($orange, 8%);
+  color: $gray-100;
+  text-shadow: 0 0 transparent
+}
