@@ -1,0 +1,6 @@
+- content_for(:controller_menu) do
+  = link_to :hacker_news_items_index, class: ['nav-item', 'nav-link'] do
+    %i.material-icons.md-18<> format_list_bulleted
+    = t('menu.hacker_news.topstories')
+
+= render template: 'layouts/application'

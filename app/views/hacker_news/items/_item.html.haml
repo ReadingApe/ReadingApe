@@ -1,6 +1,6 @@
-.media
-  %img.d-flex.mr-3{alt: item.rank}
+.media.mt-3
+  %img.img-thumbnail.d-flex.mr-3{alt: item.rank, src: 'https://source.unsplash.com/random/120x120?sig=%d' % item.rank, style: 'width: 120px; height: 120px;' }
   .media-body
-    %h5.mt-0
-      = link_to_unless item.url?.blank?, item.title, item.url, class: 'btn btn-outline-info' do
-        - link_to item.title, 'https://news.ycombinator.com/item?id=%d' % item.id, class: 'btn btn-outline-info'
+    %h5.mt-0.display-5
+      = link_to_unless item.url?.blank?, item.title, item.url do
+        - link_to item.title, 'https://news.ycombinator.com/item?id=%d' % item.id

@@ -1,5 +1,11 @@
 @import 'bootstrap';
 
-.navbar.sticky-top {
+.navbar.sticky-top
+{
   opacity: .91;
+}
+
+.media > img.img-thumbnail
+{
+  opacity: .54;
 }
