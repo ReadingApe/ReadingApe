@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170827071821) do
+ActiveRecord::Schema.define(version: 20170827140539) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer "user_id"
@@ -60,6 +60,10 @@ ActiveRecord::Schema.define(version: 20170827071821) do
     t.datetime "top_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "best_rank"
+    t.datetime "best_at"
+    t.integer "active_rank"
+    t.datetime "active_at"
     t.index ["hacker_news_item_id"], name: "index_stories_on_hacker_news_item_id"
   end
 
