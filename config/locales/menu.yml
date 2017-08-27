@@ -6,13 +6,10 @@ en:
       zh-CN: 中文
 
     home: Home
-    current: Current
-
-    hacker_news:
-      topstories: Top Stories
-      beststories: Best
-      newstories: Newest
-    stories: Story
+    top_stories: Top
+    best_stories: Best
+    current_top: Current Top
+    current_best: Current Best
 
 zh-CN:
   menu:
@@ -22,10 +19,7 @@ zh-CN:
       zh-CN: 中文
 
     home: 首页
-    current: 实时
-
-    hacker_news:
-      topstories: 热门
-      beststories: 最佳
-      newstories: 最新
-    stories: Story
+    top_stories: 热门
+    best_stories: 最佳
+    current_top: 实时热门
+    current_best: 实时最佳

@@ -1,5 +1,8 @@
-.media.mt-1.mb-3{data: {rank: 'TOP %d' % story.top_rank}}
+.media.mt-1.mb-3{data: {'rank': '%s %d' % [action_name, story.send(action_name + '_rank')]}}
   .media-body
     .text-muted
-      = t('story.take_time_to_be_top', topn: story.top_rank, range: distance_of_time_in_words(story.hacker_news_item.time, story.top_at)).html_safe
+      - story.top? do
+        = t('story.take_time_to_be_top', rank: story.top_rank, range: distance_of_time_in_words(story.hacker_news_item.time, story.top_at)).html_safe
+      - story.best? do
+        = t('story.take_time_to_be_best', rank: story.best_rank, range: distance_of_time_in_words(story.hacker_news_item.time, story.best_at)).html_safe
     .media= render story.hacker_news_item

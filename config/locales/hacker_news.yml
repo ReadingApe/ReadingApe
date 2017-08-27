@@ -8,6 +8,10 @@ en:
       other: "%{count} points"
     by: "by %{by}"
 
+    topstories: Top Stories
+    beststories: Best Stories
+    newstories: Newest Stories
+
 zh-CN:
   hacker_news:
     score:
@@ -17,3 +21,7 @@ zh-CN:
       many: "%{count} points"
       other: "%{count} points"
     by: "由 %{by} 提交"
+
+    topstories: 热门
+    beststories: 最佳
+    newstories: 最新

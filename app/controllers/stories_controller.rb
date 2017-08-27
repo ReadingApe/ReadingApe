@@ -1,5 +1,13 @@
 class StoriesController < ApplicationController
-  def index
-    @stories = Story.order(top_at: :desc)
+
+  def top
+    @stories = Story.top
+    render :index
   end
+
+  def best
+    @stories = Story.best
+    render :index
+  end
+
 end

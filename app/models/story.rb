@@ -4,8 +4,12 @@ class Story < ApplicationRecord
   validates :best_rank, :best_at, presence: true, if: ->{ top_rank.nil? }
 
   scope :by_item, ->(item_id) { find_or_initialize_by(hacker_news_item_id: item_id) }
-  scope :'top_rank!', ->(item_id, new_rank) { by_item(item_id).top_rank!(new_rank) }
-  scope :'best_rank!', ->(item_id, new_rank) { by_item(item_id).best_rank!(new_rank) }
+
+  scope :'top!', ->(item_id, new_rank) { by_item(item_id).top_rank!(new_rank) }
+  scope :top, -> { where.not(top_rank: nil).order(top_at: :desc) }
+
+  scope :'best!', ->(item_id, new_rank) { by_item(item_id).best_rank!(new_rank) }
+  scope :best, -> { where.not(best_rank: nil).order(best_at: :desc) }
 
   def hacker_news_item
     HackerNews::Item.find(hacker_news_item_id)
@@ -26,4 +30,13 @@ class Story < ApplicationRecord
 
     self
   end
+
+  def top?
+    yield if top_rank?
+  end
+
+  def best?
+    yield if best_rank?
+  end
+
 end
