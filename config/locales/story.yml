@@ -1,0 +1,7 @@
+en:
+  story:
+    take_time_to_be_top: "<mark>TOP %{topn}</mark> cost <em>%{range}</em>"
+
+zh-CN:
+  story:
+    take_time_to_be_top: "发布后 <em>%{range}</em> 成为 <mark>TOP %{topn}</mark>"

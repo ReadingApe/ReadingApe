@@ -10,11 +10,11 @@
 
     #navbarNavSiteMenus.collapse.navbar-collapse
       .navbar-nav.mr-auto
-        = link_to :stories, class: ['nav-item', 'nav-link'] do
+        = link_to :stories, class: ['nav-item', 'nav-link', 'text-uppercase'] do
           %i.material-icons.md-18<> format_list_bulleted
           = t('menu.stories')
           %span.sr-only> (current)
-        = link_to :hacker_news_items, class: ['nav-item', 'nav-link'] do
+        = link_to :hacker_news_items, class: ['nav-item', 'nav-link', 'text-uppercase'] do
           %i.material-icons.md-18<> show_chart
           = t('menu.current')
         = content_for?(:controller_menu) ? yield(:controller_menu) : ''

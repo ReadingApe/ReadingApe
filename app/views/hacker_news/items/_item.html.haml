@@ -1,11 +1,13 @@
-.media.mt-1.mb-3{data: {rank: item.rank?}}
+.media.my-2{data: {rank: item.rank?}}
   .media-body
     %h5.mt-0.display-5
       = link_to_unless item.url?.blank?, item.title, item.url do
         - link_to item.title, 'https://news.ycombinator.com/item?id=%d' % item.id
 
     .text-muted
-      = t('hacker_news.score', count: item.score)
-      = t('hacker_news.by', by: item.by)
+      = t('hacker_news.score', count: item.score? || 0)
+    .text-muted
       = timeago_tag Time.at(item.time), lang: I18n.locale
-      = link_to t('comment.comments', count: item.descendants), 'https://news.ycombinator.com/item?id=%d' % item.id, class: 'text-muted text-nowrap font-weight-bold'
+      = t('hacker_news.by', by: item.by)
+    .text-muted
+      = link_to t('comment.comments', count: item.descendants? || 0), 'https://news.ycombinator.com/item?id=%d' % item.id, class: 'text-muted text-nowrap font-weight-bold'

@@ -1,5 +1,5 @@
-.media.mt-1.mb-3{data: {rank: story.top_rank}}
+.media.mt-1.mb-3{data: {rank: 'TOP %d' % story.top_rank}}
   .media-body
     .text-muted
-      = timeago_tag story.top_at, lang: I18n.locale
+      = t('story.take_time_to_be_top', topn: story.top_rank, range: distance_of_time_in_words(story.hacker_news_item.time, story.top_at)).html_safe
     .media= render story.hacker_news_item

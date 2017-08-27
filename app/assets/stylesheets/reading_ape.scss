@@ -20,14 +20,14 @@
 
 .media[data-rank]::before
 {
-  opacity: .54;
-  content: attr(data-rank) '.';
+  opacity: .38;
+  content: attr(data-rank);
   // margin-right: .54rem;
   position: relative;
   right: 1rem;
   width: 3rem;
-  text-align: right;
-  font-size: 2rem;
+  text-align: center;
+  font-size: 1.5rem;
   border-width: thin 0 0 thin;
   border-color: lightgrey;
   border-style: double;
