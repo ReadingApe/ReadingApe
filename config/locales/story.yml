@@ -1,7 +1,7 @@
 en:
   story:
-    take_time_to_be_top: "<mark>Top %{rank}</mark> cost <em>%{range}</em>"
-    take_time_to_be_best: "<mark>Best %{rank}</mark> cost <em>%{range}</em>"
+    take_time_to_be_top: "<mark>Top %{rank}</mark> take <em>%{range}</em>"
+    take_time_to_be_best: "<mark>Best %{rank}</mark> take <em>%{range}</em>"
 
 zh-CN:
   story:
