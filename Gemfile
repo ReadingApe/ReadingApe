@@ -52,7 +52,9 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'redis', require: ["redis", "redis/connection/hiredis"]
 gem 'hiredis'
+gem 'em-synchrony'
 gem 'connection_pool'
+gem 'redis-rails'
 gem 'rails-i18n'
 gem 'title'
 gem 'devise'

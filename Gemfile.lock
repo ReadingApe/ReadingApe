@@ -106,8 +106,11 @@ GEM
     dotenv-rails (2.2.1)
       dotenv (= 2.2.1)
       railties (>= 3.2, < 5.2)
+    em-synchrony (1.0.6)
+      eventmachine (>= 1.0.0.beta.1)
     erubi (1.6.1)
     erubis (2.7.0)
+    eventmachine (1.2.5)
     execjs (2.7.0)
     factory_girl (4.8.0)
       activesupport (>= 3.0.0)
@@ -273,6 +276,22 @@ GEM
     rb-inotify (0.9.10)
       ffi (>= 0.5.0, < 2)
     redis (4.0.0)
+    redis-actionpack (5.0.1)
+      actionpack (>= 4.0, < 6)
+      redis-rack (>= 1, < 3)
+      redis-store (>= 1.1.0, < 1.4.0)
+    redis-activesupport (5.0.3)
+      activesupport (>= 3, < 6)
+      redis-store (~> 1.3.0)
+    redis-rack (2.0.2)
+      rack (>= 1.5, < 3)
+      redis-store (>= 1.2, < 1.4)
+    redis-rails (5.0.2)
+      redis-actionpack (>= 5.0, < 6)
+      redis-activesupport (>= 5.0, < 6)
+      redis-store (>= 1.2, < 2)
+    redis-store (1.3.0)
+      redis (>= 2.2)
     require_all (1.4.0)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
@@ -370,6 +389,7 @@ DEPENDENCIES
   devise
   devise-i18n
   dotenv-rails
+  em-synchrony
   factory_girl_rails
   haml-rails
   hiredis
@@ -394,6 +414,7 @@ DEPENDENCIES
   rails-timeago
   rails_best_practices
   redis
+  redis-rails
   rspec-rails
   sass-rails (~> 5.0)
   selenium-webdriver
