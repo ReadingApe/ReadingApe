@@ -99,3 +99,4 @@ end
 gem 'activeresource'
 gem 'cached_resource'
 gem 'httparty'
+gem 'twitter'

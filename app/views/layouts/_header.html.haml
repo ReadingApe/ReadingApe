@@ -1,3 +1,19 @@
+- content_for :profile_menu do
+  - if user_signed_in?
+    .nav-item.dropdown
+      %a#navbarNavProfileMenuLink.nav-link.dropdown-toggle{aria: {haspopup: "true", expanded: "false"}, data: {toggle: "dropdown"}}
+        %i.material-icons.md-18<> person
+        = t('profile.profile')
+        %span.caret>
+      .dropdown-menu.dropdown-menu-right{aria: {labelledby: "navbarNavProfileMenuLink"}}
+        %h6.dropdown-header<
+          = current_user.email
+          %br<
+          = precede "@" do
+            %b>= current_user.id
+        .dropdown-divider
+        = link_to t('profile.logout'), :destroy_user_session, method: :delete, class: 'dropdown-item'
+
 %nav#navbar.navbar.navbar-expand.navbar-dark.bg-primary.sticky-top
 
   .container
