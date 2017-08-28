@@ -97,4 +97,5 @@ group :staging, :production do
 end
 
 gem 'activeresource'
+gem 'cached_resource'
 gem 'httparty'
