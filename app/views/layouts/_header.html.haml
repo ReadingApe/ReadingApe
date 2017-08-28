@@ -1,4 +1,4 @@
-%nav#navbar.navbar.navbar-expand.navbar-dark.bg-primary
+%nav#navbar.navbar.navbar-expand.navbar-dark.bg-primary.sticky-top
 
   .container
 
@@ -6,22 +6,17 @@
       %span.navbar-toggler-icon
 
     = link_to :root, class: 'h1 navbar-brand mb-0' do
-      %img.d-inline-block.align-top{alt: :'📚🦍Reading APE'}
+      %img.d-none.d-sm-inline-block.align-top{alt: :'📚🦍'}
+      .text-capitalize.d-inline-block Reading Ape
 
     #navbarNavSiteMenus.collapse.navbar-collapse
       .navbar-nav.mr-auto
-        = link_to :top_stories, class: ['nav-item', 'nav-link', 'text-uppercase'] do
-          %i.material-icons.md-18<> format_list_bulleted
-          = t('menu.top_stories')
         = link_to :best_stories, class: ['nav-item', 'nav-link', 'text-uppercase'] do
-          %i.material-icons.md-18<> format_list_bulleted
+          %i.material-icons.md-18.d-none.d-md-inline-block<> format_list_bulleted
           = t('menu.best_stories')
-        = link_to :top_hacker_news_items, class: ['nav-item', 'nav-link', 'text-uppercase'] do
-          %i.material-icons.md-18<> show_chart
-          = t('menu.current_top')
-        = link_to :best_hacker_news_items, class: ['nav-item', 'nav-link', 'text-uppercase'] do
-          %i.material-icons.md-18<> show_chart
-          = t('menu.current_best')
+        = link_to :top_stories, class: ['nav-item', 'nav-link', 'text-uppercase'] do
+          %i.material-icons.md-18.d-none.d-md-inline-block<> show_chart
+          = t('menu.top_stories')
         = content_for?(:controller_menu) ? yield(:controller_menu) : ''
 
       .navbar-nav
