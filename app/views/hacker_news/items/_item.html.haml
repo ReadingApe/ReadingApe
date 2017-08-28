@@ -7,5 +7,5 @@
       = t('hacker_news.score', count: item.score? || 0)
       = link_to t('comment.comments', count: item.descendants? || 0), 'https://news.ycombinator.com/item?id=%d' % item.id, class: 'text-muted text-nowrap font-weight-bold'
     .text-muted
-      = timeago_tag Time.at(item.time), lang: I18n.locale
+      = timeago_tag Time.at(item.time), lang: I18n.locale, limit: 1.days.ago
       = t('hacker_news.by', by: item.by)

@@ -5,5 +5,5 @@ en:
 
 zh-CN:
   story:
-    take_time_to_be_top: "发布后 <em>%{range}</em> 成为 <mark>TOP %{rank}</mark>"
-    take_time_to_be_best: "发布后 <em>%{range}</em> 成为 <mark>Best %{rank}</mark>"
+    take_time_to_be_top: "成为 <mark>TOP %{rank}</mark> 用了 <em>%{range}</em>"
+    take_time_to_be_best: "成为 <mark>Best %{rank}</mark> 用了 <em>%{range}</em>"
