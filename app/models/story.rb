@@ -12,7 +12,28 @@ class Story < ApplicationRecord
   scope :best, -> { where.not(best_rank: nil).order(best_at: :desc) }
 
   def hacker_news_item
-    HackerNews::Item.find(hacker_news_item_id)
+    @hacker_news_item ||= HackerNews::Item.find(hacker_news_item_id)
+  end
+
+  def summary
+    {
+      "#{id}.": hacker_news_item.title,
+      rank: {
+        best: best_rank,
+        top: top_rank
+      }.compact.map{|k,v| [k, v].join('#')}.join(', '),
+      url: hacker_news_item.url!,
+      comments: hacker_news_item.comments_url
+    }.compact.map{|k,v| [k, v].join(' ')}.join(', ')
+  end
+
+  def ranks(cat=nil)
+    return '%s %d' % [cat, send( cat + '_rank')] if cat
+
+    {
+      best: best_rank,
+      top: top_rank
+    }.compact.to_a.join(' ')
   end
 
   def top_rank!(new_rank)

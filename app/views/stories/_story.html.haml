@@ -1,4 +1,5 @@
-.media.mt-1.mb-3{data: {'rank': '%s %d' % [action_name, story.send(action_name + '_rank')]}}
+- rank = [:top, :best].include?(action_name) ? story.ranks(action_name) : story.ranks
+.media.mt-1.mb-3{data: {'rank': rank, 'id': story.id}}
   .media-body
     .media= render story.hacker_news_item
     - story.best? do

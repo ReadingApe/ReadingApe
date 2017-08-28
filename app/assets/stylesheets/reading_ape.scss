@@ -34,6 +34,12 @@
   text-transform: capitalize !important;
 }
 
+.media[data-id]::after
+{
+  opacity: .38;
+  content: '#'attr(data-id);
+}
+
 ::-moz-selection {
   background: darken($orange, 8%);
   color: $gray-100;

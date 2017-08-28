@@ -4,6 +4,10 @@ Rails.application.routes.draw do
       get :top
       get :best
     end
+    member do
+      get :preview
+      post :publish
+    end
   end
   namespace :hacker_news do
     resources :items, only: [] do

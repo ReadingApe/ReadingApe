@@ -1,0 +1,8 @@
+= render @story
+
+= form_with url: publish_story_path(@story) do
+  = text_area_tag :summary, @story.summary
+  = label_tag :publish, class: 'btn' do
+    publish
+    = check_box_tag :publish
+  = submit_tag, class: 'btn btn-primary'

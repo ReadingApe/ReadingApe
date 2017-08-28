@@ -20,7 +20,11 @@ class HackerNews::Item < ActiveResource::Base
   end
 
   def url!
-    url? ? url : 'https://news.ycombinator.com/item?id=%d' % id
+    url? ? url : comments_url
+  end
+
+  def comments_url
+    'https://news.ycombinator.com/item?id=%d' % id
   end
 
 end
