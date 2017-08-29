@@ -10,4 +10,8 @@ class HackerNews::ItemsController < ApplicationController
     render :index
   end
 
+  def async_sync
+    StorySyncWorker.perform_async
+  end
+
 end

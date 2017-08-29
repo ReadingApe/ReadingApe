@@ -18,6 +18,7 @@ Rails.application.routes.draw do
       collection do
         get :top
         get :best
+        get :async_sync
       end
     end
   end
