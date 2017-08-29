@@ -6,7 +6,15 @@ class HackerNews::List
   default_timeout 10
 
   def self.topstories
-    _stories('topstories')
+    _stories('topstories').tap{|items| items.reverse.each {|item| Story.top!(item.id, item.rank) }}
+  end
+
+  def self.beststories
+    _stories('beststories', 32).tap{|items| items.reverse.each {|item| Story.best!(item.id, item.rank) }}
+  end
+
+  def self.activestories
+    _stories('activestories').tap{|items| items.reverse.each {|item| Story.active!(item.id, item.rank) }}
   end
 
   def self.newstories

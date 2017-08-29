@@ -1,8 +1,5 @@
 - content_for :profile_menu do
-  - if ! user_signed_in?
-    = link_to t('profile.sign_up'), :new_user_registration, class: ['nav-item', 'nav-link']
-    = link_to t('profile.login'), :new_user_session, class: ['nav-item', 'nav-link']
-  - else
+  - if user_signed_in?
     .nav-item.dropdown
       %a#navbarNavProfileMenuLink.nav-link.dropdown-toggle{aria: {haspopup: "true", expanded: "false"}, data: {toggle: "dropdown"}}
         %i.material-icons.md-18<> person
@@ -16,7 +13,8 @@
             %b>= current_user.id
         .dropdown-divider
         = link_to t('profile.logout'), :destroy_user_session, method: :delete, class: 'dropdown-item'
-%nav#navbar.navbar.navbar-expand.navbar-dark.bg-primary
+
+%nav#navbar.navbar.navbar-expand.navbar-dark.bg-primary.sticky-top
 
   .container
 
@@ -24,14 +22,17 @@
       %span.navbar-toggler-icon
 
     = link_to :root, class: 'h1 navbar-brand mb-0' do
-      %img.d-inline-block.align-top{alt: :📚🦍}
+      %img.d-none.d-sm-inline-block.align-top{alt: :'📚🦍'}
+      .text-capitalize.d-inline-block Reading Ape
 
     #navbarNavSiteMenus.collapse.navbar-collapse
       .navbar-nav.mr-auto
-        = link_to :root, class: ['nav-item', 'nav-link'] do
-          %i.material-icons.md-18<> home
-          = t('menu.home')
-          %span.sr-only> (current)
+        = link_to :best_stories, class: ['nav-item', 'nav-link', 'text-uppercase'] do
+          %i.material-icons.md-18.d-none.d-md-inline-block<> format_list_bulleted
+          = t('menu.best_stories')
+        = link_to :top_stories, class: ['nav-item', 'nav-link', 'text-uppercase'] do
+          %i.material-icons.md-18.d-none.d-md-inline-block<> show_chart
+          = t('menu.top_stories')
         = content_for?(:controller_menu) ? yield(:controller_menu) : ''
 
       .navbar-nav

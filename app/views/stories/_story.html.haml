@@ -1,0 +1,8 @@
+- rank = [:top, :best].include?(action_name) ? story.ranks(action_name) : story.ranks
+.media.mt-1.mb-3{data: {before: rank, after: story.id}}
+  .media-body
+    .media= render story.hacker_news_item
+    - story.best? do
+      .text-muted= t('story.take_time_to_be_best', rank: story.best_rank, range: distance_of_time_in_words(story.hacker_news_item.time, story.best_at)).html_safe
+    - story.top? do
+      .text-muted= t('story.take_time_to_be_top', rank: story.top_rank, range: distance_of_time_in_words(story.hacker_news_item.time, story.top_at)).html_safe

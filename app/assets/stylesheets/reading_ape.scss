@@ -12,16 +12,32 @@
   height: 80px;
 }
 
-a[data-rank]
+.media[data-before] a
 {
   color: #147;
   opacity: .91;
 }
-a[data-rank]::before
+
+.media[data-before]::before
 {
-  opacity: .54;
-  content: attr(data-rank) '.';
-  margin-right: .54rem;
+  opacity: .38;
+  content: attr(data-before);
+  // margin-right: .54rem;
+  position: relative;
+  right: .8rem;
+  width: 2.4rem;
+  text-align: center;
+  font-size: 1.2rem;
+  border-width: thin 0 0 thin;
+  border-color: lightgrey;
+  border-style: double;
+  text-transform: capitalize !important;
+}
+
+.media[data-after]::after
+{
+  opacity: .38;
+  content: '#'attr(data-after);
 }
 
 ::-moz-selection {

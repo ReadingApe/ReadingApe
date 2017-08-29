@@ -4,8 +4,13 @@
       %a.m-2{href: '/'}<>= t('menu.home')
       |
       %a.m-2{href: '/'}<>= t('menu.support')
+      |
+      %a.m-2{href: 'https://twitter.com/ApeReading'} @ApeReading
 
     %p<
       .small.m-2<
         = surround "由", "提供技术支持" do
           = link_to 'Lax', 'https://github.com/Lax', class: 'm-1'
+    %p<
+      - I18n.available_locales.each do |locale|
+        = link_to t('menu.languages.%s' % locale), root_path(locale: locale), class: ['mx-1']

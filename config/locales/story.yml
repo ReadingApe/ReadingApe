@@ -1,0 +1,9 @@
+en:
+  story:
+    take_time_to_be_top: "<mark>Top %{rank}</mark> take <em>%{range}</em>"
+    take_time_to_be_best: "<mark>Best %{rank}</mark> take <em>%{range}</em>"
+
+zh-CN:
+  story:
+    take_time_to_be_top: "成为 <mark>TOP %{rank}</mark> 用了 <em>%{range}</em>"
+    take_time_to_be_best: "成为 <mark>Best %{rank}</mark> 用了 <em>%{range}</em>"
