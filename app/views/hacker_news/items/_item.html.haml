@@ -1,4 +1,4 @@
-.media.my-2{data: {rank: item.rank? ? "%s %d" % [action_name, item.rank] : nil}}
+.media.my-2{data: {before: item.rank? ? "%s %d" % [action_name, item.rank] : nil}}
   .media-body
     %h5.mt-0.display-5
       = link_to item.title, item.url!
