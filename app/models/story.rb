@@ -82,7 +82,7 @@ class Story < ApplicationRecord
   end
 
   def self.publish_one!
-    best.not_published(1).sampler(1).map &:'publish!'
+    best.not_published(1).sampler.map &:'publish!'
   end
 
 private
