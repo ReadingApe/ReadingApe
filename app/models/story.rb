@@ -85,6 +85,10 @@ class Story < ApplicationRecord
     best.not_published(1).sampler(1).map &:'publish!'
   end
 
+  def async_publish
+    StoryTweetWorker.perform_async(id, false)
+  end
+
 private
   def twitter_client
     @twitter_auth = Authentication.where(provider: "twitter", email: "liulantao+readingape@gmail.com").last
