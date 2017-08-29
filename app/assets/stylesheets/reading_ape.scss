@@ -12,16 +12,16 @@
   height: 80px;
 }
 
-.media[data-rank] a
+.media[data-before] a
 {
   color: #147;
   opacity: .91;
 }
 
-.media[data-rank]::before
+.media[data-before]::before
 {
   opacity: .38;
-  content: attr(data-rank);
+  content: attr(data-before);
   // margin-right: .54rem;
   position: relative;
   right: .8rem;
@@ -34,10 +34,10 @@
   text-transform: capitalize !important;
 }
 
-.media[data-id]::after
+.media[data-after]::after
 {
   opacity: .38;
-  content: '#'attr(data-id);
+  content: '#'attr(data-after);
 }
 
 ::-moz-selection {
