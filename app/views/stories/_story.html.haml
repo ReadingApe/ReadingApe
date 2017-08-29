@@ -1,5 +1,5 @@
 - rank = [:top, :best].include?(action_name) ? story.ranks(action_name) : story.ranks
-.media.mt-1.mb-3{data: {'rank': rank, 'id': story.id}}
+.media.mt-1.mb-3{data: {before: rank, after: story.id}}
   .media-body
     .media= render story.hacker_news_item
     - story.best? do
