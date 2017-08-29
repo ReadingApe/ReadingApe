@@ -11,6 +11,8 @@ class Story < ApplicationRecord
   scope :'best!', ->(item_id, new_rank) { by_item(item_id).best_rank!(new_rank) }
   scope :best, -> { where.not(best_rank: nil).order(best_at: :desc) }
 
+  scope :published, -> { where('publish_count > 0 and publish_count IS NOT NULL') }
+
   def hacker_news_item
     @hacker_news_item ||= HackerNews::Item.find(hacker_news_item_id)
   end
@@ -58,6 +60,35 @@ class Story < ApplicationRecord
 
   def best?
     yield if best_rank?
+  end
+
+  def published?
+    publish_count and publish_count > 0
+  end
+
+  def publish!(force=false)
+    if ! force and published?
+      return :published
+    end
+
+    result = twitter_client.update summary
+    if result.id
+      update_attributes tweet_id: result.id
+      update_attributes publish_count: 1 + (publish_count || 0)
+      update_attributes publish_at: Time.now
+    end
+    return result
+  end
+
+private
+  def twitter_client
+    @twitter_auth = Authentication.where(provider: "twitter", email: "liulantao+readingape@gmail.com").limit(1)
+    @twitter_client = Twitter::REST::Client.new do |config|
+      config.consumer_key        = ENV.fetch("TWITTER_API_KEY")
+      config.consumer_secret     = ENV.fetch("TWITTER_API_SECRET")
+      config.access_token        = @twitter_auth.token
+      config.access_token_secret = @twitter_auth.secret
+    end
   end
 
 end
