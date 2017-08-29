@@ -23,6 +23,14 @@ class StoriesController < ApplicationController
     end
   end
 
+  def publish_one
+    @result = Story.publish_one!
+
+    respond_to do |format|
+      format.json { render json: @result}
+    end
+  end
+
   private
 
   def twitter_client

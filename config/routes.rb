@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     collection do
       get :top
       get :best
+      get :publish_one
     end
     member do
       get :preview
