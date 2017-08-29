@@ -10,7 +10,7 @@ class HackerNews::List
   end
 
   def self.beststories
-    _stories('beststories').tap{|items| items.reverse.each {|item| Story.best!(item.id, item.rank) }}
+    _stories('beststories', 32).tap{|items| items.reverse.each {|item| Story.best!(item.id, item.rank) }}
   end
 
   def self.activestories
