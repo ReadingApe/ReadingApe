@@ -1,1 +1,1 @@
-$("form").before "<%= escape_javascript(@result.to_json) %>"
+$("form").before "<pre><code><%= escape_javascript(@result.to_yaml) %></code></pre>"

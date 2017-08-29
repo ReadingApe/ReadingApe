@@ -3,6 +3,7 @@ class Authentication::OmniauthCallbacksController < Devise::OmniauthCallbacksCon
     @user = User.from_omniauth(request.env["omniauth.auth"], current_user)
     if @user.persisted?
       flash[:notice] = t('devise.omniauth_callbacks.success', kind: request.env["omniauth.auth"].provider)
+      @user.authentications.try :save
       sign_in_and_redirect @user
     elsif @user.save
       flash[:notice] = "Account created and signed in successfully."

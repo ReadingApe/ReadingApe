@@ -17,14 +17,14 @@ class Story < ApplicationRecord
 
   def summary
     {
-      "#{id}.": hacker_news_item.title,
-      rank: {
+      "🦍#{hacker_news_item.title}": "-",
+      "📚#{id}:": {
         best: best_rank,
         top: top_rank
-      }.compact.map{|k,v| [k, v].join('#')}.join(', '),
+      }.compact.map{|k,v| [k, v].join('#')}.join(','),
       url: hacker_news_item.url!,
       comments: hacker_news_item.comments_url
-    }.compact.map{|k,v| [k, v].join(' ')}.join(', ')
+    }.compact.map{|k,v| [k, v].join(' ')}.join(' ')
   end
 
   def ranks(cat=nil)

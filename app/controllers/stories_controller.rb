@@ -15,10 +15,8 @@ class StoriesController < ApplicationController
   end
 
   def publish
-    @result = params[:summary]  # default
-    p [params[:summary], params[:publish]]
-    # @result = twitter_client.update params[:summary] if params[:publish]
-    @result = twitter_client.user_timeline(user: 'ApeReading')
+    @result = {status: params[:summary], length: params[:summary].length}  # default
+    @result = twitter_client.update params[:summary] if params[:publish]
 
     respond_to do |format|
       format.js
@@ -28,7 +26,7 @@ class StoriesController < ApplicationController
   private
 
   def twitter_client
-    @twitter_auth = Authentication.first
+    @twitter_auth = Authentication.last
     @twitter_client = Twitter::REST::Client.new do |config|
       config.consumer_key        = ENV.fetch("TWITTER_API_KEY")
       config.consumer_secret     = ENV.fetch("TWITTER_API_SECRET")
