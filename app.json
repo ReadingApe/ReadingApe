@@ -34,6 +34,14 @@
     "REDIS_PROVIDER": {
       "description": "Redis provider for sidekiq",
       "value": "REDIS_URL"
+    },
+    "TWITTER_API_KEY": {
+      "description": "TWITTER_API_KEY",
+      "required": false
+    },
+    "TWITTER_API_SECRET": {
+      "description": "TWITTER_API_SECRET",
+      "required": false
     }
   },
   "environments": {
