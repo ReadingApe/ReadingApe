@@ -16,7 +16,9 @@ class StoriesController < ApplicationController
 
   def publish
     @result = params[:summary]  # default
-    @result = twitter_client.update params[:summary] if params[:publish]
+    p [params[:summary], params[:publish]]
+    # @result = twitter_client.update params[:summary] if params[:publish]
+    @result = twitter_client.user_timeline(user: 'ApeReading')
 
     respond_to do |format|
       format.js
