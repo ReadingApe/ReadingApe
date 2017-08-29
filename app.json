@@ -30,6 +30,10 @@
     "DEVISE_PEPPER": {
       "description": "DEVISE_PEPPER",
       "generator": "secret"
+    },
+    "REDIS_PROVIDER": {
+      "description": "Redis provider for sidekiq",
+      "value": "REDIS_URL"
     }
   },
   "environments": {

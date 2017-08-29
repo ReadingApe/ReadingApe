@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/_/sidekiq'
+
   resources :stories, only: [] do
     collection do
       get :top
