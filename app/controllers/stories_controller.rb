@@ -15,8 +15,9 @@ class StoriesController < ApplicationController
   end
 
   def publish
+    @story = Story.find(params[:id])
     @result = {status: params[:summary], length: params[:summary].length}  # default
-    @result = twitter_client.update params[:summary] if params[:publish]
+    @result = @story.publish!(body: params[:summary]) if params[:publish]
 
     respond_to do |format|
       format.js
@@ -28,18 +29,6 @@ class StoriesController < ApplicationController
 
     respond_to do |format|
       format.json { render json: @result}
-    end
-  end
-
-  private
-
-  def twitter_client
-    @twitter_auth = Authentication.last
-    @twitter_client = Twitter::REST::Client.new do |config|
-      config.consumer_key        = ENV.fetch("TWITTER_API_KEY")
-      config.consumer_secret     = ENV.fetch("TWITTER_API_SECRET")
-      config.access_token        = @twitter_auth.token
-      config.access_token_secret = @twitter_auth.secret
     end
   end
 
