@@ -3,6 +3,10 @@
     "web": {
       "quantity": 1,
       "size": "free"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free"
     }
   },
   "buildpacks": [
@@ -16,7 +20,7 @@
     "newrelic:wayne"
   ],
   "scripts": {
-    "postdeploy": "bundle exec rails db:migrate"
+    "postdeploy": "bundle exec rails db:schema:load"
   },
   "env": {
     "SECRET_KEY_BASE": {
