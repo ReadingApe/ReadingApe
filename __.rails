@@ -161,7 +161,7 @@ after_bundle do
     theme i18n models layout title
     devise-user omniauth post followable commentable
 
-    kaminari
+    kaminari ckeditor
   ].each do |fn|
     say '%s  %s' % ['*' * 12, fn], :cyan
 
