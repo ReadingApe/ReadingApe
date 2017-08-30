@@ -87,6 +87,8 @@ class Story < ApplicationRecord
       end
     rescue
       p [:rescue, result.inspect]
+      return result if once
+      return publish!(force: force, short: true, once: true, body: body)
     end
   end
 
