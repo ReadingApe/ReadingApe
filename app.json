@@ -33,14 +33,27 @@
     },
     "REDIS_PROVIDER": {
       "description": "Redis provider for sidekiq",
+      "value": "",
       "value": "REDIS_URL"
     },
     "TWITTER_API_KEY": {
       "description": "TWITTER_API_KEY",
+      "value": "",
       "required": false
     },
     "TWITTER_API_SECRET": {
       "description": "TWITTER_API_SECRET",
+      "value": "",
+      "required": false
+    },
+    "WEIBO_APP_KEY": {
+      "description": "WEIBO_APP_KEY",
+      "value": "",
+      "required": false
+    },
+    "WEIBO_APP_SECRET": {
+      "description": "WEIBO_APP_SECRET",
+      "value": "",
       "required": false
     }
   },
