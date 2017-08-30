@@ -3,6 +3,10 @@
     "web": {
       "quantity": 1,
       "size": "free"
+    },
+    "worker": {
+      "quantity": 1,
+      "size": "free"
     }
   },
   "buildpacks": [
@@ -16,7 +20,7 @@
     "newrelic:wayne"
   ],
   "scripts": {
-    "postdeploy": "bundle exec rails db:migrate"
+    "postdeploy": "bundle exec rails db:schema:load"
   },
   "env": {
     "SECRET_KEY_BASE": {
@@ -33,14 +37,27 @@
     },
     "REDIS_PROVIDER": {
       "description": "Redis provider for sidekiq",
+      "value": "",
       "value": "REDIS_URL"
     },
     "TWITTER_API_KEY": {
       "description": "TWITTER_API_KEY",
+      "value": "",
       "required": false
     },
     "TWITTER_API_SECRET": {
       "description": "TWITTER_API_SECRET",
+      "value": "",
+      "required": false
+    },
+    "WEIBO_APP_KEY": {
+      "description": "WEIBO_APP_KEY",
+      "value": "",
+      "required": false
+    },
+    "WEIBO_APP_SECRET": {
+      "description": "WEIBO_APP_SECRET",
+      "value": "",
       "required": false
     }
   },
