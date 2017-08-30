@@ -22,8 +22,8 @@ class Story < ApplicationRecord
     {
       "🦍#{hacker_news_item.title}": "┇",
       "[#{id}]": {
-        '✨': best_rank,
-        '📚': top_rank
+        '✨Best': best_rank,
+        '📚Hot': top_rank
       }.compact.map{|k,v| [k, v].join('#')}.join(','),
       url: hacker_news_item.url!,
       comments: hacker_news_item.comments_url
@@ -97,6 +97,14 @@ private
       config.consumer_secret     = ENV.fetch("TWITTER_API_SECRET")
       config.access_token        = @twitter_auth.token
       config.access_token_secret = @twitter_auth.secret
+    end
+  end
+
+  def weibo_client
+    @weibo_auth = Authentication.where(provider: "weibo", uid: "5137706648").last
+
+    @weibo_client = WeiboOAuth2::Client.new.tap do |c|
+      c.get_token_from_hash({ access_token: "2.00QMShbF7igqdDb7ee6a07d3FEcZBE" })
     end
   end
 
