@@ -100,4 +100,12 @@ private
     end
   end
 
+  def weibo_client
+    @weibo_auth = Authentication.where(provider: "weibo", uid: "5137706648").last
+
+    @weibo_client = WeiboOAuth2::Client.new.tap do |c|
+      c.get_token_from_hash({ access_token: "2.00QMShbF7igqdDb7ee6a07d3FEcZBE" })
+    end
+  end
+
 end
