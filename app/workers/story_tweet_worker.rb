@@ -8,7 +8,7 @@ class StoryTweetWorker
 
   def perform(story_id, force=false)
     Sidekiq.logger.info "Publishing #{story_id}"
-    result = Story.find(story_id).publish!(force)
+    result = Story.find(story_id).publish!(force: force)
     if result.id
       Sidekiq.logger.info "Tweet id: #{result.id}, total: #{result.user.statuses_count}, user: #{result.user.name}"
     else

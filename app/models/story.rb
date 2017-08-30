@@ -18,7 +18,8 @@ class Story < ApplicationRecord
     @hacker_news_item ||= HackerNews::Item.find(hacker_news_item_id)
   end
 
-  def summary
+  def summary(short: false)
+    comments_url = short ? nil : hacker_news_item.comments_url
     {
       "🦍#{hacker_news_item.title}": "┇",
       "#ApeReading ##{id}┇": {
@@ -26,7 +27,7 @@ class Story < ApplicationRecord
         '📚Hot': top_rank
       }.compact.map{|k,v| [k, v].join('#')}.join(','),
       url: hacker_news_item.url!,
-      comments: hacker_news_item.comments_url
+      comments: comments_urls
     }.compact.map{|k,v| [k, v].join(' ')}.join(' ')
   end
 
@@ -67,18 +68,21 @@ class Story < ApplicationRecord
     publish_count and publish_count > 0
   end
 
-  def publish!(force=false)
+  def publish!(force: false, short: false, once: false, body: nil)
     if ! force and published?
       return {error: {id: id, msg: :published}}
     end
 
-    result = twitter_client.update summary
+    result = twitter_client.update( body || summary(short: short) )
     if result.id
       update_attributes tweet_id: result.id
       update_attributes publish_count: 1 + (publish_count || 0)
       update_attributes publish_at: Time.now
+      return result
+    else
+      return result if once
+      return publish!(force: force, short: true, once: true, body: body)
     end
-    return result
   end
 
   def self.publish_one!
