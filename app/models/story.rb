@@ -27,7 +27,7 @@ class Story < ApplicationRecord
         '📚Hot': top_rank
       }.compact.map{|k,v| [k, v].join('#')}.join(','),
       url: hacker_news_item.url!,
-      comments: comments_urls
+      comments: comments_url
     }.compact.map{|k,v| [k, v].join(' ')}.join(' ')
   end
 
