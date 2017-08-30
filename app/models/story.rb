@@ -73,15 +73,20 @@ class Story < ApplicationRecord
       return {error: {id: id, msg: :published}}
     end
 
-    result = twitter_client.update( body || summary(short: short) )
-    if result.id
-      update_attributes tweet_id: result.id
-      update_attributes publish_count: 1 + (publish_count || 0)
-      update_attributes publish_at: Time.now
-      return result
-    else
-      return result if once
-      return publish!(force: force, short: true, once: true, body: body)
+    begin
+      result = twitter_client.update( body || summary(short: short) )
+      if result.id
+        update_attributes tweet_id: result.id
+        update_attributes publish_count: 1 + (publish_count || 0)
+        update_attributes publish_at: Time.now
+        return result
+      else
+        p [:else, result.inspect]
+        return result if once
+        return publish!(force: force, short: true, once: true, body: body)
+      end
+    rescue
+      p [:rescue, result.inspect]
     end
   end
 
