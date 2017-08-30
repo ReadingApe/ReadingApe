@@ -59,6 +59,11 @@
       "description": "WEIBO_APP_SECRET",
       "value": "",
       "required": false
+    },
+    "WEIBO_APP_REDIRECT_URI": {
+      "description": "WEIBO_APP_REDIRECT_URI",
+      "value": "",
+      "required": false
     }
   },
   "environments": {

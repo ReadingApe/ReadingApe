@@ -18,7 +18,7 @@ class User < ApplicationRecord
       authentication.nickname = auth.info.nickname
       authentication.image = auth.info.image
 
-      authentication.user = current_user || authentication.user || (User.where( email: auth.info.email ).first_or_initialize if email_verified?(auth))
+      authentication.user = current_user || authentication.user || (User.where( email: auth.info.email ).first_or_initialize if email_verified?(auth)) || User.new
       authentication.user.authentications << authentication
     end
 
