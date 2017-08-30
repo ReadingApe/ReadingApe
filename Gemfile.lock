@@ -1,8 +1,8 @@
 GIT
   remote: https://github.com/Lax/weibo_2.git
-  revision: 84d6d508d43a49da773d7fc92edba1f47f02e0b1
+  revision: 49aa9eb8c9919674756170177b9567159c01c431
   specs:
-    weibo_2 (0.1.8)
+    weibo_2 (0.1.9)
       hashie (~> 3.5)
       multi_json (~> 1.12)
       oauth2 (~> 1.4)
