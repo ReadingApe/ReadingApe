@@ -43,6 +43,8 @@ class User < ApplicationRecord
       true
     when 'google_oauth2'
       auth.extra.id_info.email_verified
+    when 'weibo'
+      false
     else
       false
     end

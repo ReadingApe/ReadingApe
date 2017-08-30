@@ -19,6 +19,7 @@ class Authentication::OmniauthCallbacksController < Devise::OmniauthCallbacksCon
   alias_method :twitter, :omniauth
   alias_method :facebook, :omniauth
   alias_method :google_oauth2, :omniauth
+  alias_method :weibo, :omniauth
   # You should configure your model like this:
   # devise :omniauthable, omniauth_providers: [:twitter]
 
