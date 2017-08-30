@@ -20,7 +20,7 @@ class Story < ApplicationRecord
 
   def summary
     {
-      "🦍#{hacker_news_item.title}": "",
+      "🦍#{hacker_news_item.title}": "┇",
       "[#{id}]": {
         '✨': best_rank,
         '📚': top_rank
