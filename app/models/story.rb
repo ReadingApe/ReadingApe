@@ -20,10 +20,10 @@ class Story < ApplicationRecord
 
   def summary
     {
-      "🦍#{hacker_news_item.title}": "📚",
-      "✨#{id}:": {
-        best: best_rank,
-        top: top_rank
+      "🦍#{hacker_news_item.title}": "[#{id}]",
+      "": {
+        '✨': best_rank,
+        '📚': top_rank
       }.compact.map{|k,v| [k, v].join('#')}.join(','),
       url: hacker_news_item.url!,
       comments: hacker_news_item.comments_url
