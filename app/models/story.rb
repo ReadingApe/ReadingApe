@@ -21,7 +21,7 @@ class Story < ApplicationRecord
   def summary
     {
       "🦍#{hacker_news_item.title}": "┇",
-      "[#{id}]": {
+      "#ApeReading ##{id}┇": {
         '✨Best': best_rank,
         '📚Hot': top_rank
       }.compact.map{|k,v| [k, v].join('#')}.join(','),
