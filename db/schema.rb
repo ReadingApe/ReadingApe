@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829043559) do
+ActiveRecord::Schema.define(version: 20170831090224) do
 
   create_table "authentications", force: :cascade do |t|
     t.integer "user_id"
@@ -67,6 +67,8 @@ ActiveRecord::Schema.define(version: 20170829043559) do
     t.integer "publish_count"
     t.datetime "publish_at"
     t.string "tweet_id"
+    t.boolean "expires"
+    t.datetime "expires_at"
     t.index ["hacker_news_item_id"], name: "index_stories_on_hacker_news_item_id"
   end
 
