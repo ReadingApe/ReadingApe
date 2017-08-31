@@ -21,8 +21,8 @@ class Story < ApplicationRecord
   def summary(short: false)
     comments_url = short ? nil : hacker_news_item.comments_url
     {
-      "🦍#{hacker_news_item.title}": "┇",
-      "#ApeReading ##{id}┇": {
+      "#ApeReading ##{id} 🦍┇": "#{hacker_news_item.title}",
+      "┇": {
         '✨Best': best_rank,
         '📚Hot': top_rank
       }.compact.map{|k,v| [k, v].join('#')}.join(','),
