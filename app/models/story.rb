@@ -23,7 +23,7 @@ class Story < ApplicationRecord
     {
       "#{hacker_news_item.title}": "#ApeReading🦍#{id}",
       "✨": [best_rank, top_rank].compact.join('/'),
-      "Link": hacker_news_item.url!,
+      "": hacker_news_item.url!,
       HN: comments_url
     }.compact.map{|k,v| [k, v].join(' ')}.join(' ')
   end
