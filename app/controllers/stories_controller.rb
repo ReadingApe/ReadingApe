@@ -1,12 +1,13 @@
 class StoriesController < ApplicationController
+  paginates_per 100
 
   def top
-    @stories = Story.top
+    @stories = Story.top.page(params[:page])
     render :index
   end
 
   def best
-    @stories = Story.best
+    @stories = Story.best.page(params[:page])
     render :index
   end
 

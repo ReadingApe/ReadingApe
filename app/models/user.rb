@@ -13,6 +13,9 @@ class User < ApplicationRecord
       authentication.token = auth.credentials.token
       authentication.secret = auth.credentials.secret
 
+      authentication.expires = auth.credentials.expires if auth.credentials.expires
+      authentication.expires_at = Time.at auth.credentials.expires_at.to_i if auth.credentials.expires_at
+
       authentication.email = auth.info.email
       authentication.name = auth.info.name
       authentication.nickname = auth.info.nickname
