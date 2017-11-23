@@ -1,2 +1,3 @@
 .lead.text-capitalize.text-muted.display-5.my-4= t('menu.%s_stories' % action_name)
 = render @stories
+= paginate @stories

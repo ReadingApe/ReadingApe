@@ -2,6 +2,7 @@ class Story < ApplicationRecord
   validates :hacker_news_item_id, presence: true
   validates :top_rank, :top_at, presence: true, if: ->{ best_rank.nil? }
   validates :best_rank, :best_at, presence: true, if: ->{ top_rank.nil? }
+  paginates_per 100
 
   scope :by_item, ->(item_id) { find_or_initialize_by(hacker_news_item_id: item_id) }
 
