@@ -1,5 +1,4 @@
 class StoriesController < ApplicationController
-  paginates_per 100
 
   def top
     @stories = Story.top.page(params[:page])
