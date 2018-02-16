@@ -22,9 +22,9 @@ class Story < ApplicationRecord
   def summary(short: false)
     comments_url = short ? nil : hacker_news_item.comments_url
     {
-      "#{hacker_news_item.title}": "#ApeReading🦍#{id}",
-      "✨": hacker_news_item.url!,
-      HN: comments_url
+      "✎#{hacker_news_item.title}": hacker_news_item.url!,
+      "☞": comments_url,
+      "✰": "#{id}"
     }.compact.map{|k,v| [k, v].join(' ')}.join(' ')
   end
 
