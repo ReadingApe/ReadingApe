@@ -70,7 +70,7 @@ gem 'kaminari'
 gem 'ckeditor_rails'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'bootstrap', '~> 4.0.0.beta'
+gem 'bootstrap', '~> 4.3.1'
 gem 'non-stupid-digest-assets'
 group :development do
   gem 'rails_best_practices'
