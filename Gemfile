@@ -57,7 +57,7 @@ gem 'connection_pool'
 gem 'redis-rails'
 gem 'rails-i18n'
 gem 'title'
-gem 'devise'
+gem "devise", ">= 4.6.0"
 gem 'devise-i18n'
 gem 'omniauth-github'
 gem 'omniauth-twitter'
