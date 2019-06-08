@@ -85,7 +85,7 @@ GEM
       activesupport (>= 3.0.0)
       uniform_notifier (~> 1.11)
     byebug (10.0.2)
-    cached_resource (5.1.0)
+    cached_resource (5.1.1)
       activeresource (>= 4.0)
       activesupport (>= 4.0)
       nilio (>= 1.0)
