@@ -103,3 +103,5 @@ gem 'twitter'
 gem 'sidekiq'
 gem 'omniauth-weibo-oauth2'
 gem 'weibo_2', github: 'Lax/weibo_2'
+
+gem 'omniauth-rails_csrf_protection'
