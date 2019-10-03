@@ -102,7 +102,7 @@ gem 'httparty'
 gem 'twitter'
 gem 'sidekiq'
 gem 'omniauth-weibo-oauth2'
-gem 'weibo_2'
+#gem 'weibo_2'
 
 gem 'omniauth-rails_csrf_protection'
 gem "rubyzip", ">= 1.3.0"
