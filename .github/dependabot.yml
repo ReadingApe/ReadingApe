@@ -1,0 +1,28 @@
+version: 2
+updates:
+- package-ecosystem: bundler
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  allow:
+  - dependency-type: direct
+  - dependency-type: indirect
+  ignore:
+  - dependency-name: loofah
+    versions:
+    - 2.9.0
+  - dependency-name: mime-types-data
+    versions:
+    - 3.2020.1104
+    - 3.2021.0212
+  - dependency-name: database_cleaner
+    versions:
+    - 1.8.5
+    - 2.0.0
+  - dependency-name: brakeman
+    versions:
+    - 5.0.0
+  - dependency-name: nokogiri
+    versions:
+    - 1.11.1
